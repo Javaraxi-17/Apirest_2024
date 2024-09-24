@@ -5,14 +5,15 @@ exports.create = (req, res) => {
     let notas = {};
 
     try {
-        notas.firstname = req.body.firstname;
-        notas.lastname = req.body.lastname;
-        notas.role = req.body.role;
-        notas.salary = req.body.salary;
+        notas.id_estudiante = req.body.id_estudiante;
+        notas.FechaIngreso = req.body.FechaIngreso;
+        notas.id_curso = req.body.id_curso;
+        notas.Notatotal = req.body.Notatotal;
+        notas.Status_curso = req.body.Status_curso;
 
         Notas.create(notas).then(result => {
             res.status(200).json({
-                message: "Upload Successfully a Notas with id = " + result.id,
+                message: "Upload Successfully a Notas with id = " + result.id_nota,
                 notas: result,
             });
         });
@@ -72,10 +73,11 @@ exports.updateById = async (req, res) => {
             });
         } else {
             let updatedObject = {
-                firstname: req.body.firstname,
-                lastname: req.body.lastname,
-                role: req.body.role,
-                salary: req.body.salary
+                id_estudiante: req.body.id_estudiante,
+                FechaIngreso: req.body.FechaIngreso,
+                id_curso: req.body.id_curso,
+                Notatotal: req.body.Notatotal,
+                Status_curso: req.body.Status_curso
             }
             let result = await Notas.update(updatedObject, { returning: true, where: { id: notasId } });
 
@@ -123,3 +125,4 @@ exports.deleteById = async (req, res) => {
         });
     }
 }
+
