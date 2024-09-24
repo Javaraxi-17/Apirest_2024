@@ -25,6 +25,11 @@ const productRouter = require('./app/routers/product.router.js');
 const supplierRouter = require('./app/routers/supplier.router.js');
 const musicRouter = require('./app/routers/music.router.js');
 const libroRouter = require('./app/routers/libro.router.js');
+const cursoRouter = require('./app/routers/curso.router.js');
+const estudianteRouter = require('./app/routers/estudiante.router.js');
+const notasRouter = require('./app/routers/notas.router.js');
+
+
 
 app.use('/', customerRouter);
 app.use('/', employeeRouter);
@@ -32,6 +37,9 @@ app.use('/', productRouter);
 app.use('/', supplierRouter);
 app.use('/', musicRouter);
 app.use('/', libroRouter);
+app.use('/', cursoRouter);
+app.use('/', estudianteRouter);
+app.use('/', notasRouter);
 
 app.get("/", (req, res) => {
   res.json({ message: "Bienvenido Estudiantes de UMG" });

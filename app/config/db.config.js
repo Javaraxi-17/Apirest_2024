@@ -29,6 +29,9 @@ db.Product = require('../models/product.models.js')(sequelize, Sequelize);
 db.Supplier = require('../models/supplier.models.js')(sequelize, Sequelize);
 db.Music = require('../models/music.models.js')(sequelize, Sequelize);
 db.Libro = require('../models/libro.model.js')(sequelize, Sequelize);
+db.Libro = require('../models/curso.models.js')(sequelize, Sequelize);
+db.Libro = require('../models/estudiante.models.js')(sequelize, Sequelize);
+db.Libro = require('../models/notas.models.js')(sequelize, Sequelize);
 
 
 module.exports = db;
