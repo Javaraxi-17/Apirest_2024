@@ -33,7 +33,6 @@ const proyectoRouter = require('./app/routers/proyecto.router.js');
 
 app.use('/', proyectoRouter);
 app.use('/', customerRouter);
-app.use('/', employeeRouter);
 app.use('/', productRouter);
 app.use('/', supplierRouter);
 app.use('/', musicRouter);
